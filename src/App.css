@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Spline Sans Mono', monospace;
 }
 
 .App {
@@ -44,16 +45,25 @@
 
 main {
   background-color: #282c34;
+  color: white;
   display: flex;
   height: 100vh;
+  justify-content: space-between;
 }
 
 aside {
+  align-items: center;
   border: 2px solid white;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 40vh;
 }
 
-#tasks {
+#all-tasks {
+  align-items: center;
   border: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  width: 100%
 }

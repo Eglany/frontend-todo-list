@@ -1,0 +1,12 @@
+#container-new-task {
+  align-items: flex-start;
+  /* border: 1px solid white; */
+  display: flex;
+  flex-direction: column;
+}
+
+#div-new-task, #div-status-new-task {
+  display: flex;
+  flex-direction: column;
+}
+
