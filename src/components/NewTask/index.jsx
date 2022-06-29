@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import TaskContext from '../../context/TaskContext';
 import './styles.css';
 
 function NewTask() {
   const [inputText, setInputText] = useState('');
+  const { task } = useContext(TaskContext);
+  const testHoks = (value) => task(value);
   return (
     <section id="container-new-task">
       <div id="div-new-task">
@@ -26,6 +29,7 @@ function NewTask() {
           </select>
         </label>
       </div>
+      <button>teste</button>
     </section>
   );
 }
