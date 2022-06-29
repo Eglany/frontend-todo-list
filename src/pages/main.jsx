@@ -10,7 +10,6 @@ function Main() {
         <h1>criar nova tarefa</h1>
         <NewTask />
         <NewTaskButton />
-
       </aside>
       <section id="all-tasks">
         <h1 id="title-tasks">Lista de tarefas</h1>
