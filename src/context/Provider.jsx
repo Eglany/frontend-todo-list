@@ -1,16 +1,14 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import TaskContext from './TaskContext';
 
 // eslint-disable-next-line react/prop-types
-export function Provider({ children }) {
+function Provider({ children }) {
   const [newTask, setNewTask] = useState([]);
 
-  const testTask = (value) => {
-    setTasks(value);
-    console.log(value);
-  };
+  const checkTask = () => console.log(newTask, 'provider');
 
-  const contextValues = useMemo(() => ({ testTask, setNewTask }));
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
+  const contextValues = { checkTask, setNewTask };
 
   return (
     <TaskContext.Provider value={contextValues}>

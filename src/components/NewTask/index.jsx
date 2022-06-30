@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import TaskContext from '../../context/TaskContext';
 import './styles.css';
 
 function NewTask() {
   const [inputText, setInputText] = useState('');
+  const [inputStatus, setInputStatus] = useState('pending');
+  const { setNewTask } = useContext(TaskContext);
+
   return (
     <section id="container-new-task">
       <div id="div-new-task">
@@ -19,7 +23,10 @@ function NewTask() {
       <div id="div-status-new-task">
         <span>status:</span>
         <label htmlFor="status-new-task">
-          <select type="" id="status-new-task">
+          <select
+            id="status-new-task"
+            onClick={({ target: { value } }) => setInputStatus(value)}
+          >
             <option value="pending">Pendente</option>
             <option value="progress">Em andamento</option>
             <option value="done">Pronto</option>
@@ -28,10 +35,10 @@ function NewTask() {
       </div>
       <button
         type="button"
-        onClick={testHoks}
+        id="button-new-task"
+        onClick={() => setNewTask([inputText, inputStatus])}
       >
-        teste
-
+        criar
       </button>
     </section>
   );

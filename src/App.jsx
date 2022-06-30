@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import { TaskProvider } from './context/TaskContext';
+import Provider from './context/Provider';
 import Main from './pages/main';
 
 function App() {
   return (
-    <TaskProvider>
+    <Provider>
       <Main />
-    </TaskProvider>
+    </Provider>
   );
 }
 
