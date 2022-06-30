@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import NewTask from '../components/NewTask';
+import TaskList from '../components/TaskList';
 
 function Main() {
   return (
@@ -9,8 +10,9 @@ function Main() {
         <h1>criar nova tarefa</h1>
         <NewTask />
       </aside>
-      <section id="all-tasks">
-        <h1 id="title-tasks">Lista de tarefas</h1>
+      <section id="task-list">
+        <h1 id="title-tasks-list">Lista de tarefas</h1>
+        <TaskList />
       </section>
     </main>
   );

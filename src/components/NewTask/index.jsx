@@ -5,7 +5,7 @@ import './styles.css';
 function NewTask() {
   const [inputText, setInputText] = useState('');
   const [inputStatus, setInputStatus] = useState('pending');
-  const { setNewTask } = useContext(TaskContext);
+  const { createTask } = useContext(TaskContext);
 
   return (
     <section id="container-new-task">
@@ -36,7 +36,7 @@ function NewTask() {
       <button
         type="button"
         id="button-new-task"
-        onClick={() => setNewTask([inputText, inputStatus])}
+        onClick={() => createTask([inputText, inputStatus])}
       >
         criar
       </button>

@@ -60,7 +60,7 @@ aside {
   width: 40vh;
 }
 
-#all-tasks {
+#task-list {
   align-items: center;
   border: 2px solid white;
   display: flex;
