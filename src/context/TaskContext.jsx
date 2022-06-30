@@ -1,20 +1,5 @@
-import React, { createContext } from 'react';
+import { useContext } from 'react';
 
-const TaskContext = createContext();
+const TaskContext = useContext;
 
-function teskContext({ children }) {
-  const task = (value) => {
-    console.log(value);
-    return null;
-  };
-
-  const contextValues = { task };
-
-  return (
-    <TaskContext.Provider value={contextValues}>
-      { children }
-    </TaskContext.Provider>
-  );
-}
-
-export default teskContext;
+export default TaskContext;
