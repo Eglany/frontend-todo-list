@@ -7,10 +7,11 @@ function Provider({ children }) {
   const [taskList, setTaskList] = useState([]);
 
   const createTask = (message, status) => {
-    setNewTask({ message, status });
-
-    if (!taskList) setTaskList([newTask]);
-    setTaskList([...taskList, newTask]);
+    setNewTask({ message, status })
+      .then(() => {
+        if (!taskList) setTaskList([newTask]);
+        setTaskList([...taskList, newTask]);
+      });
   };
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
