@@ -28,13 +28,13 @@
   display: flex;
 }
 
-.task-buttons div {
+.task-buttons button {
+  all: unset;
   font-size: 1.2rem;
   margin: 0 1.5vh 0 1.5vh;
   transition-duration: 0.3s;
-
 }
 
-.task-buttons div:hover {
+.task-buttons button:hover {
   transform: translateY(-8px);
 }

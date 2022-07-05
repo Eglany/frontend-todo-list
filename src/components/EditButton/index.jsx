@@ -3,6 +3,11 @@ import { BsFillPenFill } from 'react-icons/bs';
 
 export default function EditButton() {
   return (
-    <div><BsFillPenFill /></div>
+    <button
+      type="button"
+    // onClick={}
+    >
+      <BsFillPenFill />
+    </button>
   );
 }

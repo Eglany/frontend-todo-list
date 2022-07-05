@@ -9,17 +9,21 @@ function TaskList() {
 
   useEffect(() => {
     allTasks();
+  }, []);
+
+  useEffect(() => {
   }, [taskList]);
+
   return (
     <section id="task-list">
-      {taskList.map(({ task, status }, index) => (
-        <div id={index} className="task-item">
+      {taskList.map(({ task, status, id }) => (
+        <div id={`task-${id}`} className="task-item">
           <span>{task}</span>
           <div className="task-datails">
             <span>{status}</span>
             <div className="task-buttons">
               <EditButton />
-              <DeleteButton />
+              <DeleteButton props={id} />
             </div>
           </div>
         </div>

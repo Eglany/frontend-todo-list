@@ -9,8 +9,16 @@ function Provider({ children }) {
   const allTasks = async () => taskApi.GET().then((data) => setTaskList(data));
 
   const createTask = async (task, status) => taskApi.POST({ task, status }).then(allTasks);
+
+  const deleteTask = async (id) => taskApi.DELETE(id).then(allTasks);
+
   // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const contextValues = { createTask, taskList, allTasks };
+  const contextValues = {
+    createTask,
+    taskList,
+    allTasks,
+    deleteTask,
+  };
 
   return (
     <TaskContext.Provider value={contextValues}>

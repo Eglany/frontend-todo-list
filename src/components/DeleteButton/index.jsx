@@ -1,9 +1,17 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+import React, { useContext } from 'react';
 import { BsFillTrashFill } from 'react-icons/bs';
+import TaskContext from '../../context/TaskContext';
 
-function DeleteButton() {
+function DeleteButton({ props }) {
+  const { deleteTask } = useContext(TaskContext);
   return (
-    <div type="button"><BsFillTrashFill style={{ color: 'red' }} /></div>
+    <button
+      type="button"
+      onClick={async () => deleteTask(props)}
+    >
+      <BsFillTrashFill style={{ color: 'red' }} />
+    </button>
   );
 }
 

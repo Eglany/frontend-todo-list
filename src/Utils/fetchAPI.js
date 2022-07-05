@@ -6,9 +6,8 @@ const fetch = axios.create({
 
 const GET = async () => fetch.get('task').then(({ data }) => (data));
 
-const POST = async (newTask) => {
-  const result = fetch.post('task', { ...newTask }).then(({ data }) => (data));
-  return result;
-};
+const POST = async (newTask) => fetch.post('task', { ...newTask }).then(({ data }) => (data));
 
-export default { GET, POST };
+const DELETE = async (id) => fetch.delete(`task/${id}`).then();
+
+export default { GET, POST, DELETE };
