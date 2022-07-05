@@ -24,6 +24,17 @@
   width: 25vh;
 }
 
-.task-buttons button {
-  margin: 0 2px 0 2px;
+.task-buttons {
+  display: flex;
+}
+
+.task-buttons div {
+  font-size: 1.2rem;
+  margin: 0 1.5vh 0 1.5vh;
+  transition-duration: 0.3s;
+
+}
+
+.task-buttons div:hover {
+  transform: translateY(-8px);
 }

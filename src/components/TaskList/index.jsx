@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import TaskContext from '../../context/TaskContext';
 import DeleteButton from '../DeleteButton';
+import EditButton from '../EditButton';
 import './styles.css';
 
 function TaskList() {
@@ -17,7 +18,7 @@ function TaskList() {
           <div className="task-datails">
             <span>{status}</span>
             <div className="task-buttons">
-              <button type="button">editar</button>
+              <EditButton />
               <DeleteButton />
             </div>
           </div>

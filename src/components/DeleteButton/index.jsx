@@ -1,8 +1,9 @@
 import React from 'react';
+import { BsFillTrashFill } from 'react-icons/bs';
 
 function DeleteButton() {
   return (
-    <button type="button">excluir</button>
+    <div type="button"><BsFillTrashFill style={{ color: 'red' }} /></div>
   );
 }
 
