@@ -1,25 +1,29 @@
 import React, { useContext, useEffect } from 'react';
 import TaskContext from '../../context/TaskContext';
+import DeleteButton from '../DeleteButton';
+import './styles.css';
 
 function TaskList() {
-  const { taskList } = useContext(TaskContext);
+  const { taskList, allTasks } = useContext(TaskContext);
 
   useEffect(() => {
-    console.log(taskList);
+    allTasks();
   }, [taskList]);
   return (
-    <table>
-      <tr>
-        <th>tarefa</th>
-        <th>status</th>
-      </tr>
-      {taskList ? taskList.map(({ message, status }) => (
-        <tr>
-          <td>{message}</td>
-          <td>{status}</td>
-        </tr>
-      )) : null}
-    </table>
+    <section id="task-list">
+      {taskList.map(({ task, status }, index) => (
+        <div id={index} className="task-item">
+          <span>{task}</span>
+          <div className="task-datails">
+            <span>{status}</span>
+            <div className="task-buttons">
+              <button type="button">editar</button>
+              <DeleteButton />
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
   );
 }
 

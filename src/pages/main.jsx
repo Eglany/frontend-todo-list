@@ -10,7 +10,7 @@ function Main() {
         <h1>criar nova tarefa</h1>
         <NewTask />
       </aside>
-      <section id="task-list">
+      <section id="task-container">
         <h1 id="title-tasks-list">Lista de tarefas</h1>
         <TaskList />
       </section>

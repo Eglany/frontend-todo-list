@@ -36,7 +36,7 @@ function NewTask() {
       <button
         type="button"
         id="button-new-task"
-        onClick={() => createTask([inputText, inputStatus])}
+        onClick={async () => createTask(inputText, inputStatus)}
       >
         criar
       </button>

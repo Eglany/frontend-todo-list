@@ -1,0 +1,29 @@
+#task-list {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  padding: 1vh 0 1vh 0;
+  width: 80vh;
+}
+
+.task-item {
+  align-items: center;
+  display: flex;
+  margin: 4px 0 4px 0;
+  justify-content: space-between;
+  background-color: #343a40;
+  padding: 0.5vh;
+  height: 4vh;
+  width: 70vh;
+}
+
+.task-datails {
+  display: flex;
+  justify-content: space-between;
+  width: 25vh;
+}
+
+.task-buttons button {
+  margin: 0 2px 0 2px;
+}

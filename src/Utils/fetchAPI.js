@@ -4,14 +4,11 @@ const fetch = axios.create({
   baseURL: 'http://localhost:3001/',
 });
 
-const taskApi = async (method, { task, status }) => {
-  const requestMethod = {
-    GET: fetch.get('task').then((response) => response.data),
-    POST: fetch.post('task', { task, status }).then((response) => response.data),
-  };
+const GET = async () => fetch.get('task').then(({ data }) => (data));
 
-  const result = requestMethod[method];
+const POST = async (newTask) => {
+  const result = fetch.post('task', { ...newTask }).then(({ data }) => (data));
   return result;
 };
 
-export default taskApi;
+export default { GET, POST };

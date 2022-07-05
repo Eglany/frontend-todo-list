@@ -53,17 +53,17 @@ main {
 
 aside {
   align-items: center;
-  border: 2px solid white;
+  border-right: 2px solid white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 40vh;
 }
 
-#task-list {
+#task-container {
   align-items: center;
-  border: 2px solid white;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%
 }

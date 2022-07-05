@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
+import taskApi from '../Utils/fetchAPI';
 import TaskContext from './TaskContext';
 
 // eslint-disable-next-line react/prop-types
 function Provider({ children }) {
-  const [newTask, setNewTask] = useState({});
   const [taskList, setTaskList] = useState([]);
 
-  const createTask = (message, status) => {
-    setNewTask({ message, status })
-      .then(() => {
-        if (!taskList) setTaskList([newTask]);
-        setTaskList([...taskList, newTask]);
-      });
-  };
+  const allTasks = async () => taskApi.GET().then((data) => setTaskList(data));
 
+  const createTask = async (task, status) => taskApi.POST({ task, status }).then(allTasks);
   // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const contextValues = { createTask, taskList };
+  const contextValues = { createTask, taskList, allTasks };
 
   return (
     <TaskContext.Provider value={contextValues}>
